@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xliff version="1.0">
+	<file datatype="plaintext"
+		  original="messages"
+		  source-language="en"
+		  target-language="de"
+		  product-name="slider">
+		<header/>
+		<body>
+			<trans-unit id="defaultLinkLabel" xml:space="preserve">
+				<source>Learn more</source>
+				<target>Mehr erfahren</target>
+			</trans-unit>
+			<trans-unit id="navigationPrev" xml:space="preserve">
+				<source>Previous slide</source>
+				<target>Zum vorhergehenden Slide</target>
+			</trans-unit>
+			<trans-unit id="navigationNext" xml:space="preserve">
+				<source>Next slide</source>
+				<target>Zum nächsten Slide</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
