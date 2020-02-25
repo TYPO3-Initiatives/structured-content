@@ -1,7 +1,7 @@
 # FAQ to Content Blocks Registration in TYPO3
 
 
-The purpose of this FAQ is to answer why certain approaches were chosen in the [Content block registration draft](Documentation/ContentBlocks/ContentBlockRegistration.md).
+The purpose of this FAQ is to answer why certain approaches were chosen in the [Content block registration draft](ContentBlockRegistration.md).
 And to list issues that still need discussion.
 
 ##src/dist vs. structures of a TYPO3 extension
