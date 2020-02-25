@@ -29,7 +29,7 @@ This idea is heavily inspired by the web components approach, even if here it is
 | dist/Frontend.css |  | x |
 | dist/Frontend.js |  | x |
 
-##Storage of content block in the TYPO3 directory structure
+## Storage of content block in the TYPO3 directory structure
 
 Each content block is described in a separate composer package. These packages must define their type property as 
 “typo3-cms-contentblock”. TYPO3 then uses a custom composer installer to place these packages in a location different 
@@ -48,7 +48,7 @@ The suggested structure is:
 | For composer installations | config/contentBlocks/<packages> |
 
 
-###Positive side effects of this approach
+### Positive side effects of this approach
 
 * You can render the content blocks without having a complete TYPO3 installed yet
 * You may reuse the content blocks in other projects
@@ -58,7 +58,7 @@ The suggested structure is:
 
 ## Content block package files explained
 
-###composer.json
+### composer.json
 refers to: https://getcomposer.org/doc/04-schema.md 
 
 The content block ID (CType) derives from the package name. Therefore one composer package represents exactly one content block.
@@ -70,7 +70,7 @@ The content block ID (CType) derives from the package name. Therefore one compos
 **You may**
 * use the full composer.json config and define autoloading for ViewHelpers etc.
 
-###EditorInterface.yaml
+### EditorInterface.yaml
 
 refers to: https://github.com/yaml/summit.yaml.io/wiki/YAML-RFC-Index 
 
@@ -80,7 +80,7 @@ refers to: https://github.com/yaml/summit.yaml.io/wiki/YAML-RFC-Index
 * define all the fields and their position in the editing interface
 
 
-###ContentBlockIcon.(svg|png|gif)
+### ContentBlockIcon.(svg|png|gif)
 
 There is no fallback by intention, but it is easy to generate an SVG with the content block name as a graphical representation.
 
@@ -91,14 +91,14 @@ There is no fallback by intention, but it is easy to generate an SVG with the co
 * provide a file with 1:1 dimensions
 
 
-###src/Language/Default.xlf
+### src/Language/Default.xlf
 
 **You may**
 * provide that file
 * define your labels with the xlf links in the configuration file   
 
 
-##Abstraction Requirements
+## Abstraction Requirements
 To achieve the goal of reducing the complexity of content block registration 
 the [facade pattern](https://en.wikipedia.org/wiki/Facade_pattern) approach needs to be used for some of TYPO3s internal APIs.
 
@@ -118,40 +118,40 @@ These are
     * https://review.typo3.org/c/Packages/TYPO3.CMS/+/50389
 
 
-##Processes that happen during content block registration
+## Processes that happen during content block registration
 
-###Detecting a content block
+### Detecting a content block
 
 The detection of content blocks depends on the composer package type. The custom composer installer then retrieves all packages, which are of the above defined type.
 
-###Mapping to the database
+### Mapping to the database
 There are several variants of how data of a content block can be stored and retrieved from the database. 
 After careful evaluation the approach of a JSON blob using a modern database was chosen, 
 however the alternatives are listed below in case the favoured approach would turn out bad in the proof of concept.
 
-####JSON blob
+#### JSON blob
 All fields defined in the EditorIterface.yaml of a particular content block are stored as JSON blob (nosql-like) in a specified tt_content field. The content block automatically receives a DataProcessor that retrieves the data from the JSON blob as array of values and objects.
 
 This approach avoids that fields with the same identifier of different content block cause conflicts on database level. Also, the size of tt_content isn’t widely extended, if a huge amount of custom content blocks defining new fields are registered, thus giving up the rDBMS approach for those use cases.
 
-####Alternative: virtual SQL generation for ext_tables.sql extending tt_content
+#### Alternative: virtual SQL generation for ext_tables.sql extending tt_content
 Fields defined in the EditorIterface.yaml are mapped to the tt_content table via a virtual ext_tables.sql file. Therefore a hook to inject SQL into the database schema manager is needed. New fields are automatically created on installation. Changes need to be made visible in the install tool, also an accidental deletion of fields from the install tool has to be avoided.
 
 This approach allows re-using already existing fields in tt_content, but forces the creator to pay attention to field definitions in TCA for existing fields.
 
-####Alternative: virtual SQL generation for ext_tables.sql creating custom table
+#### Alternative: virtual SQL generation for ext_tables.sql creating custom table
 Fields defined in the EditorIterface.yaml are mapped to a new table. That way, each content block stores its data in an own table. To connect the content block data with tt_content a specified tt_content fields are used to store the connected table name and the uid of the content block data.
 
 This approach avoids that fields with the same identifier of different content block cause conflicts on database level. Also, the size of tt_content isn’t widely extended, if a huge amount of custom content blocks defining new fields are registered, thus giving up the rDBMS approach for those use cases.
 
-###Alternative: Entity-Attribute-Value (EAV)
+### Alternative: Entity-Attribute-Value (EAV)
 
 See following links for more information:
 * https://designpatternsphp.readthedocs.io/de/latest/More/EAV/README.html
 * https://en.wikipedia.org/wiki/Entity%E2%80%93attribute%E2%80%93value_model
 
 
-###Virtual generation of TCA (ext_tables.php)
+### Virtual generation of TCA (ext_tables.php)
 
 Requirements:
 * Has to be after non override TCA loading
@@ -160,7 +160,7 @@ Requirements:
 
 TCA is virtually generated from the class implementing a content element block field type.
 
-###Generate registration of the plugin
+### Generate registration of the plugin
 
 Requirements:
 * Register icon
