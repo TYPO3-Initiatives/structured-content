@@ -21,8 +21,8 @@ This idea is heavily inspired by the web components approach, even if here it is
 | ------------- |:-------------:| :-----:|
 | composer.json | x | x |
 | ContentBlockIcon.(svg/png/gif) | x | x |
-| src/Language/Default.xlf | x | x |
 | EditorInterface.yaml | x | x |
+| src/Language/Default.xlf | x | x |
 | src/EditorPreview.html | x | x |
 | src/Frontend.html |  | x |
 | dist/EditorPreview.css |  | x |
