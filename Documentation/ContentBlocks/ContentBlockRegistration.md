@@ -144,7 +144,7 @@ Fields defined in the EditorIterface.yaml are mapped to a new table. That way, e
 
 This approach avoids that fields with the same identifier of different content block cause conflicts on database level. Also, the size of tt_content isn’t widely extended, if a huge amount of custom content blocks defining new fields are registered, thus giving up the rDBMS approach for those use cases.
 
-### Alternative: Entity-Attribute-Value (EAV)
+#### Alternative: Entity-Attribute-Value (EAV)
 
 See following links for more information:
 * https://designpatternsphp.readthedocs.io/de/latest/More/EAV/README.html
