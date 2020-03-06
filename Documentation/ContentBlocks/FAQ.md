@@ -71,7 +71,7 @@ To be answered.
 
 To be answered.
 
-## How can fields be groped to palettes?
+## How can fields be grouped to palettes?
 
 To be answered.
 
