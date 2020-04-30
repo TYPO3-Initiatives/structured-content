@@ -65,24 +65,37 @@ The default for a field will be localize-able, making this property only necessa
 
 ## What are the conventions for label keys (frontend/ backend)?
 
-To be answered.
+In general the [coding guidelines of the TYPO3 core](https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/Internationalization/XliffFormat.html#xliff-id-naming) for labels are to be applied here as well.
+
+For backend labels that would be: `<code-block-identifier>.<field-identifier>`
+
+Although the fields are not actual database fields we recommend to use the snake_case for the field identifier.
+For frontend labels developers are free to use the structure they like, although we recommend to comply with the [coding guidelines of the TYPO3 core](https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/Internationalization/XliffFormat.html#xliff-id-naming).
 
 ## Is it possible to use different language files for frontend and backend?
 
-To be answered.
+Yes, in that case please provide `src/Language/EditorInterface.xlf` and `src/Language/Frontend.xlf` instead of `src/Language/Default.xlf`. So, for automated backend label detection the registration process will look for` Default.xlf` first and, if not present, for `EditorInterface.xlf` as well.
 
 ## How can fields be grouped to palettes?
 
-To be answered.
+Use YAML grouping, e.g.
+```yaml
+palettes:
+   - identifier: palette1
+     label: …
+     fields:
+      …
+```
 
 ## What happens if a content block definition is not valid?
 
-To be answered.
+The content block won’t be available in the TYPO3 backend for editors. An error message is available in the “Check for broken content blocks” tool in the maintenance area.
+Additional information to composer could be added via a composer plugin to validate the definition during installation.
 
 ## Is it possible to use content blocks without composer?
 
-It is a requirement. However, the first implementation will be the composer approach.
+Yes. This is part of the MVP. However, the first implementation will be the composer approach.
 
 ## Is it possible to use templates other than fluid?
 
-To be answered.
+Fluid templates will be the default (.html will be interpreted as fluid). However, automated template engine detection via file ending (e.g. .twig) is possible as a future feature.
