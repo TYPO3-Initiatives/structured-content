@@ -99,3 +99,11 @@ Yes. This is part of the MVP. However, the first implementation will be the comp
 ## Is it possible to use templates other than fluid?
 
 Fluid templates will be the default (.html will be interpreted as fluid). However, automated template engine detection via file ending (e.g. .twig) is possible as a future feature.
+
+## Are content blocks stored in TER, are they of type “typo3-cms-extension” and are they put into typo3conf/ext/ ?
+
+No. They will be of type  “typo3-contentblock”. We will need a website like TER to show what content blocks are publically available. The main registry for content blocks is packagist.org, as we are using composer.
+
+## How can we pre-define data processing for a content block having inline/ collection elements or images?
+
+We could automate the registration of data processors for certain field types (as those mentioned above). But this would be a feature.
