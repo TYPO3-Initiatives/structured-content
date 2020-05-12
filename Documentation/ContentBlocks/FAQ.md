@@ -11,7 +11,7 @@ of the content block package should look like yet. See argumentation for both ap
 
 
 ### src/dist
-* [Symfony](https://symfony.com/) complaint
+* [Symfony](https://symfony.com/) compliant
     * As TYPO3 uses more and more of Symfony it could be beneficial, especially for people new to TYPO3, to get used to these structures
 * Might be reusable for other systems
 * More easy to understand by frontend developers as this naming is also common there
