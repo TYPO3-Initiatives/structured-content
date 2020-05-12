@@ -25,7 +25,7 @@ of the content block package should look like yet. See argumentation for both ap
 ## Is it possible to provide content block bundles - having multiple content block in one Composer package?
 
 One composer package represents exactly one content block. Bundles can be realized as distributions (e.g. like TYPO3 minimal distribution) 
-or within a bundling extension. This decision was made to reduce complexity, anyway if it proves bad in test phase, if will have to be adopted.
+or within a bundling extension. This decision was made to reduce complexity, anyway if it proves bad in test phase, it will have to be adopted.
 
 ## How can I use the same CSS/ JavaScript or library assets across multiple content blocks?
 
