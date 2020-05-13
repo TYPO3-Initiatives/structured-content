@@ -10,9 +10,9 @@ attention to the [FAQs](FAQ.md) before creating issues.
 
 So the goal of this draft is to provide an easy and reliable way to register content blocks.
 
-A content block is defined as a small chunk of informatation, which is connected to a view, which is then rendered in the TYPO3 frontend.
+A content block is defined as a small chunk of information, which is connected to a view, which is then rendered in the TYPO3 frontend.
 
-Additionally this we hope to encourage people to start making custom content elements by providing a clean and easy to understand way. This might open TYPO3 to new users and target groups.
+Additionally we hope to encourage people to start making custom content elements by providing a clean and easy to understand way. This might open TYPO3 to new users and target groups.
 
 ## The idea
 
