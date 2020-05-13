@@ -3,6 +3,17 @@
 This is a draft for registration of content blocks as (composer) packages. Please read the whole document and pay 
 attention to the [FAQs](FAQ.md) before creating issues.
 
+## The Motivation
+
+> Defining "Content Elements" in TYPO3 can be hard and the learning curve is steap.
+> You need to learn PHP, TCA, TypoScript and Fluid and maybe other languages.
+
+So the goal of this initiative is to provide an easy and reliable way to register content blocks.
+
+A content block is defined as a small chunk of informatation, which is connected to a view, which is then rendered in the TYPO3 frontend.
+
+Additionally this we hope to encourage people to start making custom content elements by providing a clean and easy to understand way. This might open TYPO3 to new users and target groups.
+
 ## The idea
 
 The goal is to define content elements (further called content block) easier by simplifying and reducing the configuration
