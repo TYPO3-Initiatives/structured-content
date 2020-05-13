@@ -8,7 +8,7 @@ attention to the [FAQs](FAQ.md) before creating issues.
 > Defining "Content Elements" in TYPO3 can be hard and the learning curve is steap.
 > You need to learn PHP, TCA, TypoScript and Fluid and maybe other languages.
 
-So the goal of this initiative is to provide an easy and reliable way to register content blocks.
+So the goal of this draft is to provide an easy and reliable way to register content blocks.
 
 A content block is defined as a small chunk of informatation, which is connected to a view, which is then rendered in the TYPO3 frontend.
 
