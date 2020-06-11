@@ -90,6 +90,7 @@ refers to: https://github.com/yaml/summit.yaml.io/wiki/YAML-RFC-Index
 * define the editor interface of exactly one content block
 * define all the fields and their position in the editing interface
 
+The field types for the EditorInterface.yaml are heavily inspired by the [Symfony field types](https://symfony.com/doc/current/reference/forms/types.html) and will be mapped to TCA. See [here](FieldTypeMapping.md) for the mapping overview.
 
 ### ContentBlockIcon.(svg|png|gif)
 
