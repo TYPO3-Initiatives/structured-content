@@ -142,17 +142,17 @@ After careful evaluation the approach of a JSON blob using a modern database was
 however the alternatives are listed below in case the favoured approach would turn out bad in the proof of concept.
 
 #### JSON blob
-All fields defined in the EditorIterface.yaml of a particular content block are stored as JSON blob (nosql-like) in a specified tt_content field. The content block automatically receives a DataProcessor that retrieves the data from the JSON blob as array of values and objects.
+All fields defined in the EditorInterface.yaml of a particular content block are stored as JSON blob (nosql-like) in a specified tt_content field. The content block automatically receives a DataProcessor that retrieves the data from the JSON blob as array of values and objects.
 
 This approach avoids that fields with the same identifier of different content block cause conflicts on database level. Also, the size of tt_content isn’t widely extended, if a huge amount of custom content blocks defining new fields are registered, thus giving up the rDBMS approach for those use cases.
 
 #### Alternative: virtual SQL generation for ext_tables.sql extending tt_content
-Fields defined in the EditorIterface.yaml are mapped to the tt_content table via a virtual ext_tables.sql file. Therefore a hook to inject SQL into the database schema manager is needed. New fields are automatically created on installation. Changes need to be made visible in the install tool, also an accidental deletion of fields from the install tool has to be avoided.
+Fields defined in the EditorInterface.yaml are mapped to the tt_content table via a virtual ext_tables.sql file. Therefore a hook to inject SQL into the database schema manager is needed. New fields are automatically created on installation. Changes need to be made visible in the install tool, also an accidental deletion of fields from the install tool has to be avoided.
 
 This approach allows re-using already existing fields in tt_content, but forces the creator to pay attention to field definitions in TCA for existing fields.
 
 #### Alternative: virtual SQL generation for ext_tables.sql creating custom table
-Fields defined in the EditorIterface.yaml are mapped to a new table. That way, each content block stores its data in an own table. To connect the content block data with tt_content a specified tt_content fields are used to store the connected table name and the uid of the content block data.
+Fields defined in the EditorInterface.yaml are mapped to a new table. That way, each content block stores its data in an own table. To connect the content block data with tt_content a specified tt_content fields are used to store the connected table name and the uid of the content block data.
 
 This approach avoids that fields with the same identifier of different content block cause conflicts on database level. Also, the size of tt_content isn’t widely extended, if a huge amount of custom content blocks defining new fields are registered, thus giving up the rDBMS approach for those use cases.
 
