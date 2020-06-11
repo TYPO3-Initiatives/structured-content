@@ -54,6 +54,16 @@ a strategy for this will be needed first.
 
 Basically a YAML schema validation (based on JSON schema) is needed here. Exchange with the Form Framework team is targeted.
 
+## Why are the field types for the EditingInterface.yaml based on Symfony? Why not just use TCA?
+
+In our opinion it is important to separate a field's view related properties from it's database related properties, unlike it is done in TCA. Having a strict schema for field types also eases up the validation process for field definitions which is currently not really possible with TCA. Using a field type mapping also allows to use defaults for field properties (e.g. default size for input is 30). That way not every property needs to be defined in the EditingInterface.yaml making it slim and easier to overview.
+
+Bacause Symfony is quite mainstream, well-established and documented it makes it easier to understand those types for TYPO3 newcomers/ beginners/ frontend-only devs than TYPO3's exclusive TCA, thus providing a kind of ubiquitous language.
+
+Last but not least: With Symfony based field types the content blocks could be integrated into a different CMS or database or file based system.
+
+Notes on TCA:
+Currently there is a long term goal to refactor TCA, but it is unknown when this will happen. With Symfony based field types we wouldn’t have a breaking change in the configuration, but only “under the hood” then.
 
 ## How will content blocks become compatible to extensions like indexed_search, ke_search, solr?
 
