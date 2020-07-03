@@ -112,7 +112,7 @@ Fluid templates will be the default (.html will be interpreted as fluid). Howeve
 
 ## Are content blocks stored in TER, are they of type “typo3-cms-extension” and are they put into typo3conf/ext/ ?
 
-No. They will be of type  “typo3-contentblock”. We will need a website like TER to show what content blocks are publically available. The main registry for content blocks is packagist.org, as we are using composer.
+No. They will be of type  “typo3-cms-contentblock”. We will need a website like TER to show what content blocks are publically available. The main registry for content blocks is packagist.org, as we are using composer.
 
 ## How can we pre-define data processing for a content block having inline/ collection elements or images?
 
