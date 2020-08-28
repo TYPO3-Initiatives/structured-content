@@ -112,47 +112,28 @@ These are
     * ext_tables.php
     * Configuration/TCA/….
     * registration of the icon in the CType field in TCA
-* registration of the plugin to display the content for
+* Registration of the plugin to display the content for
     * frontend rendering including DataProcessors
-* new content element wizard (pageTS)
+* New content element wizard (pageTS)
     * registration of the icon in the new content element wizard
-* configuration of the template path(s)
-* registration for the preview in the backend
-    * https://review.typo3.org/c/Packages/TYPO3.CMS/+/50389
+* Configuration of the template path(s)
+* [Registration for the preview in the backend](https://review.typo3.org/c/Packages/TYPO3.CMS/+/50389)
 
 
 ## Processes that happen during content block registration
 
 ### Detecting a content block
 
-The detection of content blocks depends on the composer package type. The custom composer installer then retrieves all packages, which are of the above defined type.
+The detection of content blocks depends on the composer package type. The custom composer installer then retrieves all 
+packages, which are of the above defined type.
 
 ### Mapping to the database
-There are several variants of how data of a content block can be stored and retrieved from the database. 
-After careful evaluation the approach of a JSON blob using a modern database was chosen, 
-however the alternatives are listed below in case the favoured approach would turn out bad in the proof of concept.
 
-#### JSON blob
-All fields defined in the EditorInterface.yaml of a particular content block are stored as JSON blob (nosql-like) in a specified tt_content field. The content block automatically receives a DataProcessor that retrieves the data from the JSON blob as array of values and objects.
+There are [several variants](DataStorageVariants.md) of how data of a content block can be stored and retrieved from the database. 
 
-This approach avoids that fields with the same identifier of different content block cause conflicts on database level. Also, the size of tt_content isn’t widely extended, if a huge amount of custom content blocks defining new fields are registered, thus giving up the rDBMS approach for those use cases.
+Currently, there is no decision on the desired storage method, because performance research is still in progress.
 
-#### Alternative: virtual SQL generation for ext_tables.sql extending tt_content
-Fields defined in the EditorInterface.yaml are mapped to the tt_content table via a virtual ext_tables.sql file. Therefore a hook to inject SQL into the database schema manager is needed. New fields are automatically created on installation. Changes need to be made visible in the install tool, also an accidental deletion of fields from the install tool has to be avoided.
-
-This approach allows re-using already existing fields in tt_content, but forces the creator to pay attention to field definitions in TCA for existing fields.
-
-#### Alternative: virtual SQL generation for ext_tables.sql creating custom table
-Fields defined in the EditorInterface.yaml are mapped to a new table. That way, each content block stores its data in an own table. To connect the content block data with tt_content a specified tt_content fields are used to store the connected table name and the uid of the content block data.
-
-This approach avoids that fields with the same identifier of different content block cause conflicts on database level. Also, the size of tt_content isn’t widely extended, if a huge amount of custom content blocks defining new fields are registered, thus giving up the rDBMS approach for those use cases.
-
-#### Alternative: Entity-Attribute-Value (EAV)
-
-See following links for more information:
-* https://designpatternsphp.readthedocs.io/de/latest/More/EAV/README.html
-* https://en.wikipedia.org/wiki/Entity%E2%80%93attribute%E2%80%93value_model
-
+See [possible variants](DataStorageVariants.md) to store date in the database for pros and cons.
 
 ### Virtual generation of TCA (ext_tables.php)
 
