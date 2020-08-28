@@ -43,20 +43,11 @@ This idea is heavily inspired by the web components approach, even if here it is
 ## Storage of content block in the TYPO3 directory structure
 
 Each content block is described in a separate composer package. These packages must define their type property as 
-“typo3-cms-contentblock”. TYPO3 then uses a custom composer installer to place these packages in a location different 
-to normal libraries and also not in the typo3conf/ext folder.
-
-This approach makes it easier to separate the working directories for “classic extensions” (plugins, …) and content blocks.
-
-This is also compatible with the local package repository approach you would normally use if you ship packages, 
-which are very specific to a single project.
-
-The suggested structure is:
-
-|  |  |
-| ------------- |-------------|
-| For non composer installations | typo3conf/contentBlocks/<packages> |
-| For composer installations | config/contentBlocks/<packages> |
+`typo3-cms-contentblock`. TYPO3 then uses a custom composer installer to place these packages in a dedicated location.
+ 
+To separate the working directories for “classic extensions” (plugins, …), normal libraries and content blocks, 
+the target folder is `typo3conf/contentBlocks/`. This is also compatible with the local package repository approach you 
+would normally use if you ship packages, which are very specific to a single project.
 
 
 ### Positive side effects of this approach
