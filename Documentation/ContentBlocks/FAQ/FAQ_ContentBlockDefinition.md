@@ -27,6 +27,13 @@ Notes on TCA:
 Currently there is a long term goal to refactor TCA, but it is unknown when this will happen. 
 With Symfony based field types we wouldn’t have a breaking change in the configuration, but only “under the hood” then.
 
+
+## Why is the editing interface for Content Blocks defined in YAML? Why not use PHP like in TCA?
+
+As mentioned above the editing interface configuration only contains view related properties of the fields. It should be
+slim and easy to read. Therefore, descriptive language is sufficient.
+Also, using PHP would open up a possible security flaw.
+
 ## What are the conventions for label keys (frontend/ backend)?
 
 In general the [coding guidelines of the TYPO3 core](https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/Internationalization/XliffFormat.html#xliff-id-naming) 
