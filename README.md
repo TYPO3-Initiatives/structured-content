@@ -11,4 +11,4 @@
 * [Content block registration](Documentation/ContentBlocks/ContentBlockRegistration.md)
   * [Variants of data storage](Documentation/ContentBlocks/DataStorageVariants.md)
   * [Mapping of editing interface field types](Documentation/ContentBlocks/FieldTypeMapping.md)
-  * [FAQ](Documentation/ContentBlocks/FAQ.md)
+  * [FAQ](Documentation/ContentBlocks/FAQ/FAQ_index.md)

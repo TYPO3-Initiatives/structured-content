@@ -1,7 +1,7 @@
 # Content Blocks Registration in TYPO3
 
 This is a draft for registration of content blocks as (composer) packages. Please read the whole document and pay 
-attention to the [FAQs](FAQ.md) before creating issues.
+attention to the [FAQs](FAQ/FAQ_index.md) before creating issues.
 
 ## The Motivation
 
