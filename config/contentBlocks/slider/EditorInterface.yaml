@@ -25,9 +25,9 @@ fields:
           properties:
             required: true
         - identifier: buttonLink
-            type: Link
-            properties:
-              linkTypes: [page, external]
+          type: Link
+          properties:
+            linkTypes: [page, external]
   - identifier: autoplay
     type: Toggle
     defaultValue: true
