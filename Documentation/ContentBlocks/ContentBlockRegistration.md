@@ -142,7 +142,7 @@ Requirements:
 * Has to be before the caching of the TCA
 * Has to be before merging the overrides for TCA
 
-TCA is virtually generated from the class implementing a content element block field type.
+TCA is virtually generated from the class implementing a content block field type.
 
 ### Generate registration of the plugin
 
