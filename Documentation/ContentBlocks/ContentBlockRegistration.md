@@ -67,7 +67,8 @@ The content block ID (CType) derives from the package name. Therefore one compos
 
 **You must**
 * provide that file
-* set the type property to: typo3-cms-contentblock
+* set the type property to: `typo3-cms-contentblock`
+* require `"typo3-contentblocks/contentblocks-reg-api": "*"`
 
 **You may**
 * use the full composer.json config and define autoloading for ViewHelpers etc.

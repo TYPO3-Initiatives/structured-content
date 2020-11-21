@@ -1,14 +1,14 @@
 {
-    "name": "sci/slider",
-    "description": "Content block with multiple slides switched by autoplay.",
-    "type": "typo3-cms-contentblock-fluid",
-    "license": "GPL-2.0-or-later",
-    "authors": [
-        {
-            "name": "Structured Content Initiative"
-        }
-    ],
-    "require": {
-        "typo3fluid/fluid": "^2.6"
+  "name": "sci/slider",
+  "description": "Content block with multiple slides switched by autoplay.",
+  "type": "typo3-cms-contentblock-fluid",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Structured Content Initiative"
     }
+  ],
+  "require": {
+    "typo3-contentblocks/contentblocks-reg-api": "*"
+  }
 }
