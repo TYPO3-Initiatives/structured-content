@@ -107,17 +107,17 @@ the [facade pattern](https://en.wikipedia.org/wiki/Facade_pattern) approach need
 
 These are
 
-*   mapping to the database
+* mapping to the database
 * TCA generation for 
-    * ext_tables.php
-    * Configuration/TCA/….
-    * registration of the icon in the CType field in TCA
+    * ✓ ext_localconf.php
+    * ✓ Configuration/TCA/….
+    * ✓ registration of the icon in the CType field in TCA
 * Registration of the plugin to display the content for
-    * frontend rendering including DataProcessors
+    * ✓ frontend rendering including DataProcessors
 * New content element wizard (pageTS)
-    * registration of the icon in the new content element wizard
-* Configuration of the template path(s)
-* [Registration for the preview in the backend](https://review.typo3.org/c/Packages/TYPO3.CMS/+/50389)
+    * ✓ registration of the icon in the new content element wizard
+* ✓ Configuration of the template path(s)
+* ✓ [Registration for the preview in the backend](https://review.typo3.org/c/Packages/TYPO3.CMS/+/50389)
 
 
 ## Processes that happen during content block registration
@@ -135,7 +135,7 @@ Currently, there is no decision on the desired storage method, because performan
 
 See [possible variants](DataStorageVariants.md) to store date in the database for pros and cons.
 
-### Virtual generation of TCA (ext_tables.php)
+### Virtual generation of TCA
 
 Requirements:
 * Has to be after non override TCA loading
@@ -147,11 +147,11 @@ TCA is virtually generated from the class implementing a content block field typ
 ### Generate registration of the plugin
 
 Requirements:
-* Register icon
-* Add TCA entry in CTypes list including the icon
-* Register plugin in TYPO3
-* Add TypoScript to render the content plugin
-* Add PageTS for the content block
+* ✓ Register icon
+* ✓ Add TCA entry in CTypes list including the icon
+* ✓ Register content element in TYPO3
+* ✓ Add TypoScript to render the content plugin
+* ✓ Add PageTS for the content block
     * Define where to display (group / location) the content block in the new content element wizard
 
 
@@ -163,13 +163,15 @@ be adapted during the development process.
 
 ### Phase 1
 
-* Composer installer for Content Blocks
+* ✓ Composer installer for Content Blocks
 * Validation of editing interface YAML
-* Extend tt_content with a field content_block
-* Use Flexforms and XML blob to store data
+* ✓ Extend tt_content with a field content_block
+* ✓ Use Flexforms and XML blob to store data
     * or eventually and individual use of the FormEngine
-* Generate TSConfig
-* Generate TypoScript
+* ✓ Generate TSConfig
+* ✓ Generate TypoScript
+
+**In order to try it out, you need the registration API.** See instructions here: https://github.com/TYPO3-Initiatives/content-block-registration-api
 
 ### Phase 2
 
