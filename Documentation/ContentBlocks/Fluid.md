@@ -46,7 +46,7 @@ would give you the `slides` variable as an array:
     …
     </html>
 
-If a combined field has `maxItems: 1` set (or as default, like for `Image` and `Icon`), it is not delivered as array bit as a single value.
+If an `Image` and `Icon` field has `maxItems: 1` (default) it is not delivered as array bit as a single value.
 
 ## ContentBlock configuration
 
@@ -55,8 +55,8 @@ If a combined field has `maxItems: 1` set (or as default, like for `Image` and `
 The Fluid variable `{cb}` holds information about the current content block.
 
 This is currently:
-* `{cb.key}` - The ContentBlock key works like the extension key of a TYPO3 extension. It is the directory from where the ContentBlock was loaded. It can be used as a unique key or when loading assets from the ContentBlocks's directory.
+* `{cb.key}` - The ContentBlock key works like the extension key of a TYPO3 extension. It is the directory from where the ContentBlock was loaded. It can be used as a unique key (e.g. for building CSS classes) or when loading assets from the ContentBlocks's directory.
 
 ## Values from the `tt_content` record
 
-Your `tt_content` record is available as `{data}` in Fluid.
+The current `tt_content` record is available as `{data}` in Fluid.
