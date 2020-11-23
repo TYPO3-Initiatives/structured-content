@@ -1,5 +1,5 @@
 {
-  "name": "sci/counter",
+  "name": "typo3-contentblocks/counter",
   "description": "Content block providing animated counter.",
   "type": "typo3-cms-contentblock-fluid",
   "license": "GPL-2.0-or-later",
