@@ -55,7 +55,7 @@ If an `Image` and `Icon` field has `maxItems: 1` (default) it is not delivered a
 The Fluid variable `{cb}` holds information about the current content block.
 
 This is currently:
-* `{cb.key}` - The ContentBlock key works like the extension key of a TYPO3 extension. It is the directory from where the ContentBlock was loaded. It can be used as a unique key (e.g. for building CSS classes) or when loading assets from the ContentBlocks's directory.
+* `{cb.key}` - The ContentBlock key works like the extension key of a TYPO3 extension. It is the directory name (e.g. ‹call-to-action›) from where the ContentBlock was loaded. It can be used as a unique key (e.g. for building CSS classes) or for loading assets from the ContentBlocks's directory.
 
 ## Values from the `tt_content` record
 
